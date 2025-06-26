@@ -13,8 +13,8 @@ export const Login = () => {
       });
 
       console.log("✅ Verified user:", res.data.user);
-      alert("Login successful! Check console for user info.");
-      navigate("/dashboard");
+      alert("Login successful!");
+      navigate("/dashboard", { state: { user: res.data.user } });
     } catch (error) {
       console.error("❌ Verification failed", error);
       alert("Token verification failed");
